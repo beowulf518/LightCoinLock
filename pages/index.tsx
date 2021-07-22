@@ -6,25 +6,10 @@ import AvailableBalance from "../components/AvailableBalance";
 import Transaction from "../components/Transaction";
 import LockingPeriod from "../components/LockingPeriod";
 import Header from "../components/Header";
-import GetGeneralData from "./api/generalData";
 
-export async function getStaticProps({
-  preview,
-  locale,
-}: GetStaticPropsContext) {
 
-  const generalData = await GetGeneralData();
 
-  return {
-    props: {
-      generalData,
-    }
-  }
-}
-
-const Index = ({
-  generalData
-}: InferGetStaticPropsType<typeof getStaticProps>) => {
+const Index = () => {
 
     const [amountValue, setAmount] = React.useState('0');
     return (
@@ -38,7 +23,7 @@ const Index = ({
                             <Box>
                                 <Grid className='card-two' container spacing={3}>
                                     <Grid item xs={12} sm={12} md={6}>
-                                        <CardHeader title='AVAILABLE BALANCE' src='image/action1.png'/>
+                                        <CardHeader title='AVAILABLE BALANCE' src='image/LHC.png'/>
                                         <AvailableBalance />
                                     </Grid>
                                     <Grid item xs={12} sm={12} md={6}>

@@ -7,11 +7,9 @@ import cookies from "next-cookies";
 function MyApp({
   Component,
   pageProps,
-  userAddress,
-  token,
 }: { userAddress?: string; token?: string } & AppProps) {
   return (
-    <StoreWrapper userAddress={userAddress} token={token}>
+    <StoreWrapper>
       <Component {...pageProps} />
     </StoreWrapper>
   );

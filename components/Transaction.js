@@ -19,7 +19,7 @@ function Transaction(props) {
 
     return  <Box className='card-content'>
                 <Box className='grey-border1' mt={2} pb={1.3}>
-                    <Box className='font4' component='span'>Amount in ATRI:</Box>
+                    <Box className='font4' component='span'>Amount in LHC:</Box>
                     <input className='card-input font4 text-right' defaultValue='0' onChange={handleChangeAmount}/>
                 </Box>
                 <Box className='grey-border1' mt={2} pb={1.3}>

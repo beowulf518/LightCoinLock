@@ -12,6 +12,14 @@ const providerOptions = {
       //   network: "binance",
       //   chainId: 56,
       // },
+      options: {
+        rpc: {
+          97: 'https://data-seed-prebsc-1-s1.binance.org:8545/'
+          },
+        network: 'binance',
+        chainId: 97,
+        infuraId: 'T6NPT88TA4V7YMSFATCQZR31VU96KMA7ZP'
+      }
     },
 };
 
@@ -20,7 +28,7 @@ const providerOptions = {
 const web3Provider = async () => {
   
   const _web3Modal = new Web3Modal({
-      network: "mainnet", // optional
+      network: "binance", // optional
       cacheProvider: true, // optional
       providerOptions, // required
   });

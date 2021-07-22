@@ -22,7 +22,7 @@ function PeriodRow(props) {
                     <Box className='font4' component='span' pl={2.4}>{props.value}</Box>
                 </Grid>
                 <Grid className='text-right' item xs={12} sm={12} md={6}>
-                    <Box className='font4' component='span' >You will receive {(props.unlimited) ? props.amountValue:parseInt(props.amountValue)} ATRI</Box>
+                    <Box className='font4' component='span' >You will receive {(props.unlimited) ? props.amountValue:parseInt(props.amountValue)} LHC</Box>
                 </Grid>
             </Grid>
     ;

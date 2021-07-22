@@ -18,9 +18,9 @@ export const useStore = () => useContext(StoreContext);
 
 export const StoreWrapper = ({ children, userAddress, token }: any) => {
   const [provider, setProvider] = useState(null);
-  const [ethBalance, setEthBalance] = useState<any>(null);
-  const [usdtBalance, setUsdtEthBalance] = useState<any>(null);
-  const [cluBalance, setCluBalance] = useState<any>(null);
+  const [ethBalance, setEthBalance] = useState<any>(0.0);
+  const [usdtBalance, setUsdtEthBalance] = useState<any>(0.0);
+  const [cluBalance, setCluBalance] = useState<any>(0.0);
   const [network, setNetwork] = useState<any>(null);
   const [selectedAddress, setSelectedAddress] = useState<string>(null);
   const [web3, setWeb3] = useState<Web3Provider>(null);
@@ -31,11 +31,10 @@ export const StoreWrapper = ({ children, userAddress, token }: any) => {
 
   useEffect(() => {
     // Verify Token and isLoggedIn
-    if(localStorage.getItem('isLogin') == "true"){
-      console.log('-------reconnect to wallet-------')
-      reconnect();
-    }
-
+    // if(localStorage.getItem('isLogin') == "true"){
+    //   console.log('-------reconnect to wallet-------')
+    //   reconnect();
+    // }
   }, []);
 
   const reconnect = async () => {
@@ -50,14 +49,18 @@ export const StoreWrapper = ({ children, userAddress, token }: any) => {
     const signer = _provider.getSigner();
     const address = await signer.getAddress();
     const etherBalance = await _provider.getBalance(address);
+
+   
     const network = await _provider.getNetwork();
-    const usdtBalance = await getUsdtBalance(signer, address);
+    // const usdtBalance = await getUsdtBalance(signer, address);
+    const usdtBalance = 0
+    console.log(_provider)
     // const signature = await signer.signMessage(`${message}:${message.length}`)
     // const isLogin = await login(address, signature, hash)
 
     await setProvider(_provider);
     await setEthBalance(ethers.utils.formatEther(etherBalance));
-    await setUsdtEthBalance(ethers.utils.formatUnits(usdtBalance, 6));
+    await setUsdtEthBalance(ethers.utils.formatUnits(usdtBalance, 18));
     await setNetwork(network);
     await setSelectedAddress(address);
     await setIsLoggedIn(true);

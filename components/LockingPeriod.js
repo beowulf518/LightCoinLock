@@ -10,7 +10,7 @@ function LockingPeriod(props) {
     const [periodValue, setPeriod] = React.useState('Buy unlocked ATRI');
 
     return  <Box>
-                <PeriodRow unlimited={true} amountValue={props.amountValue} periodValue={periodValue} setPeriod={setPeriod} value="Buy unlocked ATRI"/>
+                <PeriodRow unlimited={true} amountValue={props.amountValue} periodValue={periodValue} setPeriod={setPeriod} value="Buy unlocked LHC"/>
                 <PeriodRow amountValue={props.amountValue} periodValue={periodValue} setPeriod={setPeriod} value="Lockup 1 month"/>
                 <PeriodRow amountValue={props.amountValue} periodValue={periodValue} setPeriod={setPeriod} value="Lockup 3 month"/>
                 <PeriodRow amountValue={props.amountValue} periodValue={periodValue} setPeriod={setPeriod} value="Lockup 6 month"/>
