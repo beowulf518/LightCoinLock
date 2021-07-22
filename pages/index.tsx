@@ -23,16 +23,16 @@ const Index = () => {
                             <Box>
                                 <Grid className='card-two' container spacing={3}>
                                     <Grid item xs={12} sm={12} md={6}>
-                                        <CardHeader title='AVAILABLE BALANCE' src='image/LHC.png'/>
+                                        <CardHeader title='AVAILABLE BALANCE' src='./image/LHC.png'/>
                                         <AvailableBalance />
                                     </Grid>
                                     <Grid item xs={12} sm={12} md={6}>
-                                        <CardHeader title='YOUR TRANSACTION' src='image/action2.png'/>
+                                        <CardHeader title='YOUR TRANSACTION' src='./image/action2.png'/>
                                         <Transaction setAmount={setAmount}/>
                                     </Grid>
                                 </Grid>
                                 <Box className='card-period'>
-                                    <CardHeader title='SELECT YOUR LOCKING PERIOD' src='image/action3.png'/>
+                                    <CardHeader title='SELECT YOUR LOCKING PERIOD' src='./image/action3.png'/>
                                     <LockingPeriod amountValue={amountValue} />
                                 </Box>
                             </Box>

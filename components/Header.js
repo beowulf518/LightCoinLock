@@ -11,7 +11,7 @@ const Header = (props) => {
     return  <Box className='header'>
                 <Box className='logo'>
                     <a href='/'>
-                        <img alt='' src={baseUrl + 'image/logo.gif'} />
+                        <img alt='' src={baseUrl + './image/logo.gif'} />
                     </a>
                     <Button className='font2' variant="outlined" color="secondary" onClick={async () =>{
                         connectWallet();
